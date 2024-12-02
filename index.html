@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício STRINGS</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Exercício 1:</h3>
+        <p id="a"></p>
+        <h3>Exercício 2:</h3>
+        <p id="b"></p>
+        <h3>Exercício 3:</h3>
+        <p id="c"></p>
+        <h3>Exercício 4:</h3>
+        <p id="d"></p>
+        <h3>Exercício 5:</h3>
+        <p id="e"></p>
+        <h3>Exercício 6:</h3>
+        <p id="f"></p>
+        <h3>Exercício 7:</h3>
+        <p id="g"></p>
+    </div>
+
+    <script>
+        // ex 1 - usando template literals
+        const frase = "Aprender JavaScript é divertido!";
+        document.querySelector('#a').textContent = `${frase.length}`;
+        
+        // ex 2 - usando método direto    
+        document.querySelector('#b').textContent = 
+            "JavaScript é incrível"
+            .split(' ')
+            .map(word => word.toUpperCase())
+            .join(' ');
+        
+        // ex 3 - usando template literal    
+        const nome = "Ana Clara";
+        document.querySelector('#c').textContent = `${nome.split('Ana').join('Maria')}`;
+        
+        // ex 4 - usando operador ternário    
+        const gosto = "Eu gosto de programar";
+        document.querySelector('#d').textContent = gosto.includes('gosto') ? 'true' : 'false';
+        
+        // ex 5 - usando slice ao invés de substring
+        const palavra = 'computador';
+        document.querySelector('#e').textContent = palavra.slice(2, 5);
+
+        // ex 6 - usando arrow function e operador ternário
+        const senha = "JavaScript123";
+        const verificarSenha = (pwd) => pwd.length >= 8 ? "Senha válida" : "Senha inválida";
+        document.querySelector('#f').textContent = verificarSenha(senha);
+
+        // ex 7 - usando indexOf ao invés de search
+        const texto = 'Eu amo programar em JavaScript';
+        document.querySelector('#g').textContent = 
+            texto.indexOf('JavaScript') !== -1 ? "Palavra encontrada" : "Palavra não encontrada";
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+
+        p {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            color: #2c3e50;
+            font-size: 1.1em;
+            border-left: 4px solid #3498db;
+            transition: all 0.3s ease;
+        }
+
+        p:hover {
+            transform: translateX(10px);
+            background-color: #e9ecef;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+
+            h3 {
+                font-size: 1em;
+            }
+
+            p {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+        }
+    </style>
+</body>
+</html>
